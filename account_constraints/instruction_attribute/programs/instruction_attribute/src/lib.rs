@@ -16,7 +16,9 @@ pub mod instruction_attribute {
 }
 
 #[derive(Accounts)]
-#[instruction(s:String)]
+// You can access the instruction’s arguments with the #[instruction(..)] attribute.
+// You have to list them in the same order as in the instruction but you can omit all arguments after the last one you need.
+#[instruction(s: String)]
 pub struct Initialize<'info> {
     #[account(mut)]
     pub signer: Signer<'info>,
