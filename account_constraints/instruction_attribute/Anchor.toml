@@ -5,7 +5,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-instruction_attribute = "ADv24LdzNvYpt5SEbNt3ePKwXRZsV1WS9TfuRsCwv3L2"
+instruction_attribute = "9kjjzParbe5pPdiZBPK7uBWZ5GkBxcos8TQUGsQKCnwC"
 
 [registry]
 url = "https://api.apr.dev"
