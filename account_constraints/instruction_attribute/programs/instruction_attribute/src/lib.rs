@@ -24,7 +24,7 @@ pub struct Initialize<'info> {
         init,
         payer = signer,
         // 8 for discriminator, 
-         // 4 for the string length and s.len() for the content of string,
+        // 4 for the string length and s.len() for the content of string,
         // 16 for u128
         space = 8 + 4 + s.len() + 16,
     )]
