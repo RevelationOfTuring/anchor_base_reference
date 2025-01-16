@@ -1,7 +1,6 @@
 import * as anchor from "@coral-xyz/anchor";
 import { BN, Program } from "@coral-xyz/anchor";
 import { Address } from "../target/types/address";
-import "@solana/web3.js";
 import { Keypair, PublicKey } from "@solana/web3.js";
 import assert from "assert";
 

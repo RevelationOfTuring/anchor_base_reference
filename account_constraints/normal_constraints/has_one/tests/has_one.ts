@@ -1,7 +1,6 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program, BN } from "@coral-xyz/anchor";
 import { HasOne } from "../target/types/has_one";
-import "@solana/web3.js";
 import assert from "assert"
 import { Keypair, sendAndConfirmTransaction } from "@solana/web3.js";
 
