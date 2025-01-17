@@ -15,6 +15,7 @@ pub mod executable {
 
 #[derive(Accounts)]
 pub struct ExecutableCheck<'info> {
+    // Checks the account is executable (i.e. the account is a program). You may want to use the Program type instead.
     /// CHECK: check account is executable
     #[account(executable)]
     pub account: UncheckedAccount<'info>,
