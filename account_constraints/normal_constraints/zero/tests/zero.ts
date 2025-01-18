@@ -63,6 +63,32 @@ describe("zero", () => {
     console.log(`tx signature [${txSig}]`);
   });
 
+  it("Fail with zero constraint", async () => {
+    const accountInfo = await connection.getAccountInfo(accKey.publicKey);
+    assert.equal(accountInfo.data.length, 8 + 10240);
+    assert(accountInfo.owner.equals(program.programId));
+
+    // accountInfo.data is not all zero and first 8 bytes have been set discriminator
+    assert.notEqual(accountInfo.data.compare(
+      // zero bytes with length 8
+      Buffer.from([0, 0, 0, 0, 0, 0, 0, 0]),
+      0,
+      8,
+      0,
+      8
+    ), 0);
+
+    try {
+      await program.methods.initialize()
+        .accounts({
+          account: accKey.publicKey,
+        })
+        .rpc();
+    } catch (err) {
+      assert.strictEqual(err.logs[2], "Program log: AnchorError caused by account: account. Error Code: ConstraintZero. Error Number: 2013. Error Message: Expected zero account discriminant.")
+    }
+  });
+
   it("Update data at specific index", async () => {
     const i = 255;
     const index = 4;
