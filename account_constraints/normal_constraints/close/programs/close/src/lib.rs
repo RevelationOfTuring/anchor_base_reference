@@ -22,6 +22,13 @@ pub struct Close<'info> {
     #[account(mut)]
     /// CHECK: receiver for the sol from account
     pub receiver: UncheckedAccount<'info>,
+    /* 
+        Closes the account by:
+            - Sending the lamports to the specified account
+            - Assigning the owner to the System Program
+            - Resetting the data of the account
+        Requires mut to exist on the account.
+    */
     #[account(
         mut,
         close = receiver,
