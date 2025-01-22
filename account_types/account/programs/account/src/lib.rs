@@ -48,6 +48,7 @@ pub mod account {
 
 #[derive(Accounts)]
 pub struct CheckAccount<'info> {
+    // Account container that checks ownership on deserialization
     pub my_account1: Account<'info, AccountData1>,
     pub mint_account: Account<'info, Mint>,
     pub token_account: Account<'info, TokenAccount>,
