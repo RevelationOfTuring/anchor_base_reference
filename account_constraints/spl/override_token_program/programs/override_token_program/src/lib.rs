@@ -14,6 +14,8 @@ pub mod override_token_program {
 
 #[derive(Accounts)]
 pub struct CheckTokenProgram<'info> {
+    // The token_program can optionally be overridden.
+    // NOTE: require that mint should consit with the token_program
     #[account(
         mint::token_program = token_program,
     )]
