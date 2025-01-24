@@ -46,6 +46,8 @@ pub mod account {
     }
 }
 
+// Account: 用于定义一个由program管理的struct。这些struct映射到链上的account，并由 Anchor 自动处理序列化和反序列化。
+// 使用场景：当需要在区块链上持久化存储结构化数据时，如用户资料、游戏状态或任何其他应用特定数据可以使用该修饰器
 #[derive(Accounts)]
 pub struct CheckAccount<'info> {
     // Account container that checks ownership on deserialization
